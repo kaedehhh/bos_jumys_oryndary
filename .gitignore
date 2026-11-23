@@ -1,6 +1,5 @@
-__pycache__/
-*.py[cod]
-.venv/
-venv/
-.env
-instance/
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/

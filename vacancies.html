@@ -1,1 +1,35 @@
-{% extends 'base.html' %}{% block title %}Вакансиялар — CareerHub{% endblock %}{% block content %}<section class="page-hero"><div class="container"><div class="eyebrow">МҮМКІНДІКТЕР КАТАЛОГЫ</div><h1>Вакансиялар</h1><p>Өзіңе лайық жұмысты ізде және келесі қадамыңды жаса.</p></div></section><section class="container content-section"><form class="filter-panel" method="get"><div class="field field-wide"><label>Лауазым немесе компания</label><input name="q" value="{{ q }}" placeholder="Мысалы, Python Developer"></div><div class="field"><label>Қала</label><select name="city"><option value="">Барлық қала</option>{% for c in cities %}<option value="{{ c }}" {% if selected_city==c %}selected{% endif %}>{{ c }}</option>{% endfor %}</select></div><div class="field"><label>Жалақы, кемінде (₸)</label><input name="salary" type="number" min="0" value="{{ salary }}" placeholder="300000"></div><div class="field"><label>Тәжірибе, ең көбі (жыл)</label><input name="experience" type="number" min="0" value="{{ experience }}" placeholder="2"></div><button class="btn btn-primary filter-btn">Іздеу ↗</button><a class="reset-link" href="{{ url_for('vacancies') }}">Тазарту</a></form>{% if error %}<div class="flash error">{{ error }}</div>{% endif %}<div class="results-line"><b>{{ vacancies|length }} нәтиже</b><span>Жалақы бойынша жоғарыдан төмен</span></div><div class="cards-grid">{% for v in vacancies %}<article class="vacancy-card"><div class="card-top"><span class="company-icon">{{ (v.company_name or 'C')[:1] }}</span><span class="card-city">⌖ {{ v.city or 'Көрсетілмеген' }}</span></div><h3>{{ v.title }}</h3><p class="company-name">{{ v.company_name or 'Компания' }} · {{ v.industry or 'Сала көрсетілмеген' }}</p><p class="description-preview">{{ (v.description or 'Толық ақпарат вакансия бетінде.')[:125] }}{% if v.description and v.description|length>125 %}…{% endif %}</p><div class="skill-tags">{% for skill in (v.skills or '').split(',')[:3] if skill %}<span>{{ skill.strip() }}</span>{% endfor %}</div><div class="card-bottom"><div><strong>{{ '{:,.0f}'.format(v.salary or 0).replace(',', ' ') }} ₸</strong><small>/ айына</small></div><a href="{{ url_for('vacancy_detail', vacancy_id=v.vacancy_id) }}">Толығырақ ↗</a></div></article>{% else %}<div class="empty-state">Сүзгіге сәйкес вакансия табылмады. Іздеу шарттарын өзгертіп көріңіз.</div>{% endfor %}</div></section>{% endblock %}
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CareerHub — бос жұмыс орындарын іздеу және өтінім беру жүйесі">
+  <title>CareerHub — мансабыңды баста</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="vacancies">
+  <header class="topbar">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html"><span class="brand-mark">C</span> Career<span>Hub</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Мәзір" aria-expanded="false">☰</button>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Басты бет</a>
+        <a href="vacancies.html">Вакансиялар</a>
+        <a href="companies.html">Компаниялар</a>
+        <a href="skills.html">Дағдылар</a>
+        <a href="applications.html">Өтінімдер</a>
+      </nav>
+      <a class="nav-cta" href="vacancies.html">Жұмыс табу <span>↗</span></a>
+    </div>
+  </header>
+  <main id="app"><div class="container content-section">Жүктелуде...</div></main>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a class="brand" href="index.html"><span class="brand-mark">C</span> Career<span>Hub</span></a>
+      <p>Өз мүмкіндігіңді тап. Мансабыңды бүгін баста.</p>
+      <small>© 2026 CareerHub · SQLite деректер базасынан алынған мәліметтер</small>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,1 +1,35 @@
-{% extends 'base.html' %}{% block title %}Дағдылар — CareerHub{% endblock %}{% block content %}<section class="page-hero"><div class="container"><div class="eyebrow">КӘСІБИ ҚҰЗЫРЕТТЕР</div><h1>Дағдылар</h1><p>Вакансияларда сұранысқа ие білім мен технологиялар.</p></div></section><section class="container content-section"><div class="skill-grid">{% for s in skills %}<article class="skill-card"><div class="skill-icon">✳</div><div><h3>{{ s.skill_name }}</h3><p>{{ s.category or 'Жалпы' }}</p></div><span class="skill-count">{{ s.vacancy_count }} вакансия</span></article>{% else %}<div class="empty-state">Дағдылар табылмады.</div>{% endfor %}</div></section>{% endblock %}
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CareerHub — бос жұмыс орындарын іздеу және өтінім беру жүйесі">
+  <title>CareerHub — мансабыңды баста</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="skills">
+  <header class="topbar">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html"><span class="brand-mark">C</span> Career<span>Hub</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Мәзір" aria-expanded="false">☰</button>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Басты бет</a>
+        <a href="vacancies.html">Вакансиялар</a>
+        <a href="companies.html">Компаниялар</a>
+        <a href="skills.html">Дағдылар</a>
+        <a href="applications.html">Өтінімдер</a>
+      </nav>
+      <a class="nav-cta" href="vacancies.html">Жұмыс табу <span>↗</span></a>
+    </div>
+  </header>
+  <main id="app"><div class="container content-section">Жүктелуде...</div></main>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a class="brand" href="index.html"><span class="brand-mark">C</span> Career<span>Hub</span></a>
+      <p>Өз мүмкіндігіңді тап. Мансабыңды бүгін баста.</p>
+      <small>© 2026 CareerHub · SQLite деректер базасынан алынған мәліметтер</small>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

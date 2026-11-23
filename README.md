@@ -1,34 +1,20 @@
-# CareerHub — веб-сайт із SQLite
+# CareerHub — GitHub Pages нұсқасы
 
-CareerHub — веб-нұсқа бос жұмыс орындарын іздеу және өтінім беру жүйесі. Flask, HTML/CSS және SQLite қолданады.
+## Жариялау
+1. ZIP архивін ашыңыз.
+2. Ішіндегі барлық файлды GitHub репозиторийінің түбіріне жүктеңіз (index.html, data.json, script.js, style.css және қалған HTML беттері).
+3. GitHub репозиторийінде Settings → Pages бөліміне өтіңіз.
+4. Build and deployment: Deploy from a branch таңдаңыз.
+5. Branch: main және folder: /(root) таңдаңыз, Save басыңыз.
+6. Бірнеше минуттан кейін GitHub Pages берген URL арқылы index.html бетін ашыңыз.
 
-## Жергілікті іске қосу (Windows / PyCharm)
+## Маңызды шектеу
+GitHub Pages тек статикалық HTML/CSS/JavaScript файлдарын орындайды. Ол Flask/Python серверін немесе SQLite базасын тікелей іске қоспайды.
+- `data.json` — `vacancies.db` базасындағы Vacancies, Companies және Skills кестелерінен сайт көрсету үшін алынған деректер.
+- Сайтта іздеу, сүзгілеу, вакансияны ашу және беттер арасында өту JavaScript арқылы орындалады.
+- Өтінімдер демонстрациялық түрде браузердің localStorage қоймасында сақталады. Олар басқа құрылғыға/браузерге жіберілмейді және SQLite файлына жазылмайды.
+- `vacancies.db` және `app.py` бастапқы курстық жұмыстың SQLite/Flask нұсқасы ретінде бөлек сақталуы керек. Бұл статикалық сайт оларды өзгертпейді.
+- Жеке пайдаланушылардың аты-жөні, email және телефон деректері `data.json` файлына көшірілмейді.
 
-1. Python 3.10+ орнатыңыз.
-2. PyCharm Terminal ашып, жоба бумасына өтіңіз.
-3. Тәуелділіктерді орнатыңыз:
-   ```powershell
-   pip install -r requirements.txt
-   ```
-4. Қосымшаны іске қосыңыз:
-   ```powershell
-   python app.py
-   ```
-5. Браузерден `http://127.0.0.1:5000` ашыңыз.
-
-## Render-ге жариялау
-
-- GitHub репозиторийіне осы буманың ішіндегі файлдарды жүктеңіз (папканың ішіндегі файлдарды, ZIP-ті емес).
-- Render → New → Web Service → GitHub репозиторийін таңдаңыз.
-- Build Command: `pip install -r requirements.txt`
-- Start Command: `gunicorn app:app`
-- Free instance сайтты көрсетуге жарайды, бірақ Render Free файлдық жүйесі уақытша: сервер ұйқыға кеткенде, қайта іске қосылғанда немесе redeploy болғанда SQLite-ке жазылған жаңа өтінімдер жоғалуы мүмкін. Тұрақты SQLite деректері үшін ақылы Render Web Service + Persistent Disk қажет. Render құжаттамасын қараңыз.
-
-## Деректер базасы
-
-`vacancies.db` — бастапқы курстық жұмыстағы SQLite базасының көшірмесі. Қосымша бар кестелерді ғана пайдаланады:
-`Users`, `Companies`, `Vacancies`, `Skills`, `User_Skills`, `Vacancy_Skills`, `Applications`.
-
-Кодта `CREATE TABLE` және `DROP TABLE` сұраныстары жоқ. Жаңа өтінім жіберілгенде қажет болса `Users` кестесіне пайдаланушы, ал `Applications` кестесіне өтінім қосылады.
-
-`DB_PATH` орта айнымалысы арқылы деректер базасының орнын өзгертуге болады.
+## Жергілікті тексеру
+`index.html` файлын жай ашқанда браузердің қауіпсіздік шектеуіне байланысты `data.json` fetch орындалмауы мүмкін. GitHub Pages арқылы немесе жергілікті сервер арқылы тексеріңіз.

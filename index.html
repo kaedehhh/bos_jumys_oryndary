@@ -1,4 +1,35 @@
-{% extends 'base.html' %}{% block content %}<section class="hero"><div class="container hero-grid"><div><div class="eyebrow"><span class="pulse"></span> Мансапқа апарар жол осы жерден басталады</div><h1>Өзіңе лайық<br><em>жұмысты</em> тап.</h1><p class="hero-copy">Мүмкіндіктерді зертте, дағдыларыңа сай вакансияны таңда және келесі қадамыңды жаса.</p><div class="hero-actions"><a class="btn btn-primary" href="{{ url_for('vacancies') }}">Вакансияларды көру <span>→</span></a><a class="text-link" href="{{ url_for('companies') }}">Компаниялармен танысу</a></div><div class="hero-note">✦ Жаңа мүмкіндіктер · Нақты компаниялар · Оңай өтінім</div></div><div class="hero-art"><div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div><div class="art-card"><div class="art-top"><span class="mini-logo">CH</span><span class="tag-live">● LIVE</span></div><div class="art-avatar">✦</div><div class="art-lines"><b>Сенің келесі қадамың</b><span>Мүмкіндіктер әлеміне қош келдің</span></div><div class="art-progress"><i></i></div><div class="art-bottom"><span>CAREER PATH</span><strong>01 / 04</strong></div></div><div class="float-chip chip-top">✧ Жаңа мүмкіндіктер</div><div class="float-chip chip-bottom">↗ Өсуге дайынсың ба?</div></div></div></section>
-<section class="stats-band"><div class="container stats-grid"><div><strong>{{ stats.vacancies }}</strong><span>Ашық вакансия</span></div><div><strong>{{ stats.companies }}</strong><span>Компания</span></div><div><strong>{{ stats.users }}</strong><span>Үміткер</span></div><div><strong>{{ stats.applications }}</strong><span>Жіберілген өтінім</span></div></div></section>
-<section class="section container"><div class="section-heading"><div><div class="eyebrow">МҮМКІНДІКТЕР</div><h2>Таңдаулы вакансиялар</h2><p>Саған қызықты болуы мүмкін ұсыныстар.</p></div><a class="text-link" href="{{ url_for('vacancies') }}">Барлық вакансиялар ↗</a></div><div class="cards-grid">{% for v in vacancies %}<article class="vacancy-card"><div class="card-top"><span class="company-icon">{{ (v.company_name or 'C')[:1] }}</span><span class="card-city">⌖ {{ v.city or 'Қала көрсетілмеген' }}</span></div><h3>{{ v.title }}</h3><p class="company-name">{{ v.company_name or 'Компания' }}</p><div class="skill-tags">{% for skill in (v.skills or '').split(',')[:3] if skill %}<span>{{ skill.strip() }}</span>{% endfor %}</div><div class="card-bottom"><div><strong>{{ '{:,.0f}'.format(v.salary or 0).replace(',', ' ') }} ₸</strong><small>/ айына</small></div><a href="{{ url_for('vacancy_detail', vacancy_id=v.vacancy_id) }}" aria-label="Вакансияны ашу">↗</a></div></article>{% else %}<div class="empty-state">Әзірге вакансиялар жоқ.</div>{% endfor %}</div></section>
-<section class="cta-section"><div class="container cta-inner"><div><div class="eyebrow">КЕЛЕСІ ҚАДАМ СЕНІҢ ҚОЛЫҢДА</div><h2>Мансабыңды бүгін баста.</h2><p>Өзіңе сәйкес вакансияны тауып, өтініміңді жібер.</p></div><a class="btn btn-light" href="{{ url_for('vacancies') }}">Іздеуді бастау ↗</a></div></section>{% endblock %}
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CareerHub — бос жұмыс орындарын іздеу және өтінім беру жүйесі">
+  <title>CareerHub — мансабыңды баста</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="home">
+  <header class="topbar">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html"><span class="brand-mark">C</span> Career<span>Hub</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Мәзір" aria-expanded="false">☰</button>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Басты бет</a>
+        <a href="vacancies.html">Вакансиялар</a>
+        <a href="companies.html">Компаниялар</a>
+        <a href="skills.html">Дағдылар</a>
+        <a href="applications.html">Өтінімдер</a>
+      </nav>
+      <a class="nav-cta" href="vacancies.html">Жұмыс табу <span>↗</span></a>
+    </div>
+  </header>
+  <main id="app"><div class="container content-section">Жүктелуде...</div></main>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a class="brand" href="index.html"><span class="brand-mark">C</span> Career<span>Hub</span></a>
+      <p>Өз мүмкіндігіңді тап. Мансабыңды бүгін баста.</p>
+      <small>© 2026 CareerHub · SQLite деректер базасынан алынған мәліметтер</small>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

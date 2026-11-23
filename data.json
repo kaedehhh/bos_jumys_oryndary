@@ -1,0 +1,254 @@
+{
+  "stats": {
+    "vacancies": 10,
+    "companies": 10,
+    "users": 11,
+    "applications": 11
+  },
+  "vacancies": [
+    {
+      "vacancy_id": 7,
+      "title": "AI Engineer",
+      "description": "Жасанды интеллект жүйелері",
+      "city": "Астана",
+      "salary": 700000.0,
+      "experience_years": 3,
+      "company_name": "AI Future",
+      "industry": "Жасанды интеллект",
+      "skills": "Python"
+    },
+    {
+      "vacancy_id": 6,
+      "title": "Machine Learning Engineer",
+      "description": "Машиналық оқыту модельдері",
+      "city": "Алматы",
+      "salary": 650000.0,
+      "experience_years": 2,
+      "company_name": "DataLab",
+      "industry": "Деректерді талдау",
+      "skills": "Machine Learning"
+    },
+    {
+      "vacancy_id": 3,
+      "title": "Data Scientist",
+      "description": "Жасанды интеллект және деректер",
+      "city": "Астана",
+      "salary": 600000.0,
+      "experience_years": 2,
+      "company_name": "FinTech Group",
+      "industry": "Қаржы",
+      "skills": "Python,Machine Learning"
+    },
+    {
+      "vacancy_id": 9,
+      "title": "Financial Analyst",
+      "description": "Қаржылық деректерді талдау",
+      "city": "Алматы",
+      "salary": 500000.0,
+      "experience_years": 1,
+      "company_name": "Smart Finance",
+      "industry": "Қаржы",
+      "skills": null
+    },
+    {
+      "vacancy_id": 1,
+      "title": "Python Developer",
+      "description": "Python тілінде бағдарламалау",
+      "city": "Астана",
+      "salary": 450000.0,
+      "experience_years": 1,
+      "company_name": "Astana IT Solutions",
+      "industry": "IT",
+      "skills": "Python,SQL"
+    },
+    {
+      "vacancy_id": 8,
+      "title": "Database Administrator",
+      "description": "Деректер базасын басқару",
+      "city": "Қарағанды",
+      "salary": 420000.0,
+      "experience_years": 2,
+      "company_name": "Web Solutions",
+      "industry": "IT",
+      "skills": null
+    },
+    {
+      "vacancy_id": 2,
+      "title": "Data Analyst",
+      "description": "Деректерді талдау",
+      "city": "Алматы",
+      "salary": 400000.0,
+      "experience_years": 1,
+      "company_name": "Digital Kazakhstan",
+      "industry": "IT",
+      "skills": "SQL,Data Analysis"
+    },
+    {
+      "vacancy_id": 5,
+      "title": "Web Developer",
+      "description": "Веб-сайттарды әзірлеу",
+      "city": "Шымкент",
+      "salary": 380000.0,
+      "experience_years": 1,
+      "company_name": "TechnoPark",
+      "industry": "IT",
+      "skills": "Python"
+    },
+    {
+      "vacancy_id": 4,
+      "title": "Junior SQL Developer",
+      "description": "SQL және деректер базасы",
+      "city": "Қарағанды",
+      "salary": 300000.0,
+      "experience_years": 0,
+      "company_name": "Smart Education",
+      "industry": "Білім беру",
+      "skills": "SQL"
+    },
+    {
+      "vacancy_id": 10,
+      "title": "IT Support Specialist",
+      "description": "ІТ жүйелеріне қолдау көрсету",
+      "city": "Шымкент",
+      "salary": 280000.0,
+      "experience_years": 0,
+      "company_name": "EduTech KZ",
+      "industry": "Білім беру",
+      "skills": null
+    }
+  ],
+  "companies": [
+    {
+      "company_id": 7,
+      "company_name": "AI Future",
+      "industry": "Жасанды интеллект",
+      "city": "Астана",
+      "vacancy_count": 1
+    },
+    {
+      "company_id": 1,
+      "company_name": "Astana IT Solutions",
+      "industry": "IT",
+      "city": "Астана",
+      "vacancy_count": 1
+    },
+    {
+      "company_id": 6,
+      "company_name": "DataLab",
+      "industry": "Деректерді талдау",
+      "city": "Алматы",
+      "vacancy_count": 1
+    },
+    {
+      "company_id": 2,
+      "company_name": "Digital Kazakhstan",
+      "industry": "IT",
+      "city": "Алматы",
+      "vacancy_count": 1
+    },
+    {
+      "company_id": 10,
+      "company_name": "EduTech KZ",
+      "industry": "Білім беру",
+      "city": "Шымкент",
+      "vacancy_count": 1
+    },
+    {
+      "company_id": 3,
+      "company_name": "FinTech Group",
+      "industry": "Қаржы",
+      "city": "Астана",
+      "vacancy_count": 1
+    },
+    {
+      "company_id": 4,
+      "company_name": "Smart Education",
+      "industry": "Білім беру",
+      "city": "Қарағанды",
+      "vacancy_count": 1
+    },
+    {
+      "company_id": 9,
+      "company_name": "Smart Finance",
+      "industry": "Қаржы",
+      "city": "Алматы",
+      "vacancy_count": 1
+    },
+    {
+      "company_id": 5,
+      "company_name": "TechnoPark",
+      "industry": "IT",
+      "city": "Шымкент",
+      "vacancy_count": 1
+    },
+    {
+      "company_id": 8,
+      "company_name": "Web Solutions",
+      "industry": "IT",
+      "city": "Қарағанды",
+      "vacancy_count": 1
+    }
+  ],
+  "skills": [
+    {
+      "skill_id": 7,
+      "skill_name": "C++",
+      "category": "Бағдарламалау",
+      "vacancy_count": 0
+    },
+    {
+      "skill_id": 6,
+      "skill_name": "Java",
+      "category": "Бағдарламалау",
+      "vacancy_count": 0
+    },
+    {
+      "skill_id": 1,
+      "skill_name": "Python",
+      "category": "Бағдарламалау",
+      "vacancy_count": 4
+    },
+    {
+      "skill_id": 9,
+      "skill_name": "HTML/CSS",
+      "category": "Веб әзірлеу",
+      "vacancy_count": 0
+    },
+    {
+      "skill_id": 2,
+      "skill_name": "SQL",
+      "category": "Деректер базасы",
+      "vacancy_count": 3
+    },
+    {
+      "skill_id": 4,
+      "skill_name": "Data Analysis",
+      "category": "Деректерді талдау",
+      "vacancy_count": 1
+    },
+    {
+      "skill_id": 10,
+      "skill_name": "Excel",
+      "category": "Деректерді талдау",
+      "vacancy_count": 0
+    },
+    {
+      "skill_id": 3,
+      "skill_name": "Machine Learning",
+      "category": "Жасанды интеллект",
+      "vacancy_count": 2
+    },
+    {
+      "skill_id": 5,
+      "skill_name": "Communication",
+      "category": "Жеке дағдылар",
+      "vacancy_count": 0
+    },
+    {
+      "skill_id": 8,
+      "skill_name": "Statistics",
+      "category": "Математика",
+      "vacancy_count": 0
+    }
+  ]
+}
